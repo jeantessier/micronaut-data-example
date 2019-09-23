@@ -6,5 +6,11 @@ import io.micronaut.data.repository.CrudRepository
 
 @Repository
 interface BookRepository extends CrudRepository<Book, Long> {
+
     Book find(String title)
+
+    void update(@Id Long id, String title)
+
+    void update(@Id Long id, int pages)
+
 }

@@ -20,3 +20,15 @@ You can list existing entries with:
 You can fetch a specific entry with:
 
     $ http :8080/book/1
+
+You can modify an entry with:
+
+    $ http PATCH :8080/book/1 pages=1000
+
+You can delete an entry with:
+
+    $ http DELETE :8080/book/1
+
+You can delete all entries with:
+
+    $ http DELETE :8080/book

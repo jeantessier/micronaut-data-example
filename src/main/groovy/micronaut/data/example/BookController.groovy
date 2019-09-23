@@ -1,7 +1,9 @@
 package micronaut.data.example
 
+import io.micronaut.http.*
 import io.micronaut.http.annotation.*
 import io.micronaut.spring.tx.annotation.*
+
 import java.text.*
 
 import javax.inject.Inject;
@@ -29,7 +31,36 @@ class BookController {
     def save(String title, int pages) {
         Book book = new Book(title: title, pages: pages)
         bookRepository.save(book)
-        return book
+        return HttpResponse.created(book)
+    }
+
+    @Patch("/{id}")
+    @Transactional
+    def update(Long id, Optional<String> title, Optional<Integer> pages) {
+        if (title.present) {
+            bookRepository.update(id, title.get())
+        }
+        if (pages.present) {
+            bookRepository.update(id, pages.get())
+        }
+
+        return HttpResponse.temporaryRedirect(new URI("/book/${id}"))
+    }
+
+    @Delete("/")
+    @Transactional
+    def delete() {
+        bookRepository.deleteAll()
+
+        return HttpResponse.noContent()
+    }
+
+    @Delete("/{id}")
+    @Transactional
+    def delete(Long id) {
+        bookRepository.deleteById(id)
+
+        return HttpResponse.noContent()
     }
 
 }
