@@ -2,6 +2,9 @@
 micronaut:
     application:
         name: micronaut-data-example
+jackson:
+    serialization:
+        writeDatesAsTimestamps: false
 ---
 datasources:
     default:
