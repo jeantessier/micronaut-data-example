@@ -11,7 +11,7 @@ import javax.persistence.Id
 class Book {
     @Id
     @GeneratedValue
-    Long id
+    UUID id
     String title
     int pages
 
@@ -27,4 +27,5 @@ class Book {
 
     Book() {
     }
+
 }

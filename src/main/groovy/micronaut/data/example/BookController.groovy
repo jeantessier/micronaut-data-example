@@ -22,7 +22,7 @@ class BookController {
 
     @Get("/{id}")
     @Transactional(readOnly = true)
-    def show(Long id) {
+    def show(UUID id) {
         bookRepository.findById(id).orElse(null)
     }
 
@@ -36,7 +36,7 @@ class BookController {
 
     @Patch("/{id}")
     @Transactional
-    def update(Long id, Optional<String> title, Optional<Integer> pages) {
+    def update(UUID id, Optional<String> title, Optional<Integer> pages) {
         if (title.present) {
             bookRepository.update(id, title.get())
         }
@@ -57,7 +57,7 @@ class BookController {
 
     @Delete("/{id}")
     @Transactional
-    def delete(Long id) {
+    def delete(UUID id) {
         bookRepository.deleteById(id)
 
         return HttpResponse.noContent()
