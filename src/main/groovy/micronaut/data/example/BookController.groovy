@@ -1,12 +1,14 @@
 package micronaut.data.example
 
-import io.micronaut.http.*
-import io.micronaut.http.annotation.*
-import io.micronaut.spring.tx.annotation.*
+import io.micronaut.http.HttpResponse
+import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Delete
+import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.Patch
+import io.micronaut.http.annotation.Post
 
-import java.text.*
-
-import javax.inject.Inject;
+import javax.inject.Inject
+import javax.transaction.Transactional
 
 @Controller("/book")
 class BookController {
@@ -15,13 +17,13 @@ class BookController {
     BookRepository bookRepository
 
     @Get("/")
-    @Transactional(readOnly = true)
+    @Transactional
     def index() {
         bookRepository.findAll()
     }
 
     @Get("/{id}")
-    @Transactional(readOnly = true)
+    @Transactional
     def show(UUID id) {
         bookRepository.findById(id).orElse(null)
     }
