@@ -9,6 +9,7 @@ import javax.persistence.Id
 
 @Entity
 class Book {
+
     @Id
     @GeneratedValue
     UUID id
@@ -19,13 +20,5 @@ class Book {
     Date dateCreated
     @DateUpdated
     Date dateUpdated
-
-    Book(String title, int pages) {
-        this.title = title
-        this.pages = pages
-    }
-
-    Book() {
-    }
 
 }
