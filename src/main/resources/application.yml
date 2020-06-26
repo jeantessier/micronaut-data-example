@@ -2,6 +2,10 @@
 micronaut:
     application:
         name: micronaut-data-example
+    server:
+        netty:
+            access-logger:
+                enabled: true
 jackson:
     serialization:
         writeDatesAsTimestamps: false
