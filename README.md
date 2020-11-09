@@ -5,9 +5,13 @@ This example combines Micronaut with Micronaut-Data, backed by MySQL, in Groovy.
 I used the [Micronaut-Data documentation](https://micronaut-projects.github.io/micronaut-data/snapshot/guide/)
 as a starting point.
 
+There is a single domain class `Book` that uses UUIDs for its IDs.
+
 ## To Run:
 
     $ ./gradlew run
+
+##  Sample Queries
 
 You can create an entry with:
 
