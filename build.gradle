@@ -9,7 +9,6 @@ group "micronaut.data.example"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
