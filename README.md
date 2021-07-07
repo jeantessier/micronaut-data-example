@@ -15,7 +15,7 @@ There is a single domain class `Book` that uses UUIDs for its IDs.
 
 You can create an entry with:
 
-    $ http POST :8080/book "title=Jean was here" pages=500
+    $ http :8080/book "title=Jean was here" pages=500
 
 You can list existing entries with:
 

@@ -30,7 +30,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 
     compileOnly "io.micronaut.data:micronaut-data-processor:$micronautDataVersion"
-    compile "io.micronaut.data:micronaut-data-hibernate-jpa:$micronautDataVersion"
+    implementation "io.micronaut.data:micronaut-data-hibernate-jpa:$micronautDataVersion"
 }
 
 mainClassName = "micronaut.data.example.Application"
