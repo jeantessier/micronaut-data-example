@@ -7,7 +7,7 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Patch
 import io.micronaut.http.annotation.Post
 
-import javax.inject.Inject
+import jakarta.inject.Inject
 import javax.transaction.Transactional
 
 @Controller("/book")

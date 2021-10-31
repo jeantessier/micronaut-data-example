@@ -1,25 +1,28 @@
 package micronaut.data.example
 
 import io.micronaut.http.HttpRequest
-import io.reactivex.Flowable
-import io.reactivex.schedulers.Schedulers
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-import javax.inject.Singleton
+import jakarta.inject.Singleton
+import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
+import reactor.core.scheduler.Schedulers
+
+import java.util.concurrent.Callable
 
 @Singleton
 class TraceService {
 
     private static final Logger LOG = LoggerFactory.getLogger(TraceService.class)
 
-    Flowable<Boolean> trace(HttpRequest<?> request) {
-        Flowable.fromCallable({ ->
+    Flux<Boolean> trace(HttpRequest<?> request) {
+        Mono.fromCallable(() -> {
             if (LOG.isInfoEnabled()) {
                 LOG.info("Tracing request: " + request.getUri())
             }
             return true
-        }).subscribeOn(Schedulers.io())
+        }).flux().subscribeOn(Schedulers.boundedElastic())
     }
 
 }
