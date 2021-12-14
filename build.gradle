@@ -25,7 +25,7 @@ dependencies {
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
-    implementation("jakarata-annotation:jakarata-annotation-api")
+    implementation("jakarta.annotation:jakarta.annotation-api")
     compileOnly("io.micronaut:micronaut-http-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
