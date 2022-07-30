@@ -17,4 +17,13 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
+    <!-- SQL Logging from Micronaut docs -->
+    <!-- https://micronaut-projects.github.io/micronaut-data/latest/guide/#jdbcConfiguration -->
+    <logger name="io.micronaut.data.query" level="trace"/>
+
+    <!-- SQL Logging from Hibernate -->
+    <!-- https://vladmihalcea.com/the-best-way-to-log-jdbc-statements/ -->
+    <logger name="org.hibernate.SQL" level="debug"/>
+    <logger name="org.hibernate.type.descriptor.sql" level="trace"/>
+
 </configuration>
