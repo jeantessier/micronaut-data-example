@@ -4,12 +4,12 @@ Thumbs.db
 build/
 target/
 out/
+.micronaut/
 .idea
 *.iml
 *.ipr
 *.iws
 .project
 .settings
-.classpath.factorypath
-
+.classpath
 .factorypath
