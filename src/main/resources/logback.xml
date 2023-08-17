@@ -1,29 +1,14 @@
 <configuration>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <withJansi>true</withJansi>
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
-            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
-
-    <logger name="HTTP_ACCESS_LOGGER" additivity="false" level="info">
-        <appender-ref ref="STDOUT" />
-    </logger>
-
-    <!-- SQL Logging from Micronaut docs -->
-    <!-- https://micronaut-projects.github.io/micronaut-data/latest/guide/#jdbcConfiguration -->
-    <logger name="io.micronaut.data.query" level="trace"/>
-
-    <!-- SQL Logging from Hibernate -->
-    <!-- https://vladmihalcea.com/the-best-way-to-log-jdbc-statements/ -->
-    <logger name="org.hibernate.SQL" level="debug"/>
-    <logger name="org.hibernate.type.descriptor.sql" level="trace"/>
-
 </configuration>
