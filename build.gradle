@@ -1,8 +1,8 @@
 plugins {
     id("groovy") 
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.3.5"
-    id("io.micronaut.aot") version "4.3.5"
+    id("io.micronaut.application") version "4.3.6"
+    id("io.micronaut.aot") version "4.3.6"
 }
 
 version = "0.1"
@@ -32,7 +32,7 @@ dependencies {
 
 
 application {
-    mainClass.set("micronaut.data.example.Application")
+    mainClass = "micronaut.data.example.Application"
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
@@ -57,5 +57,6 @@ micronaut {
         optimizeClassLoading = true
         deduceEnvironment = true
         optimizeNetty = true
+        replaceLogbackXml = true
     }
 }
