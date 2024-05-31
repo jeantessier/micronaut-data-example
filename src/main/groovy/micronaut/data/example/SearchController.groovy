@@ -1,13 +1,13 @@
 package micronaut.data.example
 
-import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.micronaut.http.annotation.Post;
-import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
+import io.micronaut.http.annotation.Post
+import jakarta.inject.Inject
+import jakarta.transaction.Transactional
 
 @Controller("/search")
-public class SearchController {
+class SearchController {
 
     @Inject
     BookRepository bookRepository
