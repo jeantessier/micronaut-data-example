@@ -43,7 +43,7 @@ You can delete all entries with:
 
 Searches are case-insensitive.
 
-You can search by title with
+You can search by title with:
 
     http :8080/search q==jean%
 
