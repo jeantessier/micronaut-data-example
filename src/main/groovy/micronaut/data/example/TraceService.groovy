@@ -16,9 +16,7 @@ class TraceService {
 
     Flux<Boolean> trace(HttpRequest<?> request) {
         Mono.fromCallable(() -> {
-            if (LOG.isInfoEnabled()) {
-                LOG.info("Tracing request: " + request.getUri())
-            }
+            LOG.info("Tracing request: {} {}", request.getMethodName(), request.getPath())
             return true
         }).flux().subscribeOn(Schedulers.boundedElastic())
     }
