@@ -6,7 +6,7 @@ import io.micronaut.data.repository.CrudRepository
 @Repository
 interface BookRepository extends CrudRepository<Book, UUID> {
 
-    Book find(String title)
+    List<Book> findAllByTitleIlike(String title)
 
     void update(@Id UUID id, String title)
 
